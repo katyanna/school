@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  {% if courses %}
+
+  {% for course in courses %}
+
+    <h3><a href="#">{{ course.name }}</a></h3>
+
+  {% endfor %}
+
+  {% else %}
+
+  <p>There are no courses yet</p>
+
+  {% endif %}
+
+{% endblock %}

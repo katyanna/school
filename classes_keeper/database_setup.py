@@ -20,7 +20,7 @@ class ClassInfo(Base):
 
     name = Column(String(80), nullable=False)
     teacher = Column(String(80))
-    time = Column(DateTime, nullable=False)
+    schedule = Column(String(80), nullable=False)
     price = Column(String(8))
     id = Column(Integer, primary_key=True)
     course_id = Column(Integer, ForeignKey('course.id'))

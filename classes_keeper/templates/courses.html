@@ -2,14 +2,15 @@
 
 {% block content %}
 
+  <a href="{{ url_for('newCourse', course_id=course_id) }}">Create course</a>
 
   {% if courses %}
 
-  {% for course in courses %}
+    {% for course in courses %}
 
-    <h3><a href="#">{{ course.name }}</a></h3>
+    <h3><a href="{{ url_for('showClasses', course_id=course.id)}}">{{ course.name }}</a></h3>
 
-  {% endfor %}
+    {% endfor %}
 
   {% else %}
 

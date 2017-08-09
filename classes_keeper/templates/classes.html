@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2>{{ course.name }}</h2>
+
+  <a href="{{ url_for('newClass', course_id=course_id) }}">Create class</a>
+
+  </br></br>
+
+  {% if classes %}
+    {% for class in classes %}
+      <p>{{ class.name }}</p>
+      <p>{{ class.teacher }}</p>
+      <p>{{ class.schedule }}</p>
+      <p>{{ class.price }}</p>
+
+      <a href="{{ url_for('editClass', course_id=course.id, class_id=class.id) }}">Edit</a>
+      <a href='{{ url_for('deleteClass', course_id=course.id, class_id=class.id) }}'>Delete</a>
+
+      </br></br>
+    {% endfor %}
+
+  {% else %}
+
+  <p>There are no classes registered yet.</p>
+
+  {% endif %}
+
+{% endblock %}

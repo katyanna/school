@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <h1>Are you sure you want to delete {{ classinfo.name }}?</h1>
+
+    <form action="{{ url_for('deleteClass', course_id=course_id, class_id=classinfo.id) }}" method="post">
+
+      <input type='submit', value='Delete'>
+
+    </form>
+
+    <a href="{{ url_for('showClasses', course_id=course_id) }}">Cancel</a>
+
+{% endblock %}
